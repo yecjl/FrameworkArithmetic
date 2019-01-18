@@ -1,4 +1,4 @@
-package com.study.arithmetic;
+package com.study.arithmetic.Day1;
 
 import org.junit.Test;
 
@@ -23,8 +23,8 @@ public class ExampleUnitTest {
         int[] list = new int[]{2, 1, 5, 4, 3, 9, 6};
         printList(list);
         selectSort(list);
-//        bubbleSort(list);
-//        Arrays.sort(list);
+        //        bubbleSort(list);
+        //        Arrays.sort(list);
         printList(list);
     }
 
@@ -37,6 +37,7 @@ public class ExampleUnitTest {
 
     /**
      * 冒泡排序
+     *
      * @param list
      */
     public void bubbleSort(int[] list) {
@@ -64,6 +65,7 @@ public class ExampleUnitTest {
 
     /**
      * 选择排序
+     *
      * @param list
      */
     public void selectSort(int[] list) {
