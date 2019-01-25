@@ -1,4 +1,4 @@
-package com.study.arithmetic.majiang;
+package com.study.arithmetic.Day2;
 
 import java.util.NoSuchElementException;
 
@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
  * Created by danke on 2018/12/1.
  */
 public class LinkedList<E> {
-    transient int size = 0;
+    transient int size = 0; // 大小
     /**
      * 头结点
      */
@@ -43,12 +43,19 @@ public class LinkedList<E> {
     public void add(int index, E element) {
         checkPositionIndex(index);
         if (index == size) {
+            // 加到最后一位
             linkLast(element);
         } else {
+            // 加到指定位置
             linkBefore(element, node(index));
         }
     }
 
+    /**
+     * 加到指定位置
+     * @param element 需要添加的元素
+     * @param succ 指定的节点
+     */
     private void linkBefore(E element, Node<E> succ) {
         Node<E> prev = succ.prev;
         Node<E> newNode = new Node<>(prev, element, succ);
@@ -161,12 +168,13 @@ public class LinkedList<E> {
     }
 
     /**
-     * 获取结点
+     * 获取结点：链式结构查找数据比较困难，需要循环
+     * 单向链表和双向链表的区别就在此处：双向链表的查找会比单向链表快
      * @param index
      * @return
      */
     private Node<E> node(int index) {
-        if (index < (size >> 1)) { // 如果index在整个链表的前半部分，从前往后找
+        if (index < (size >> 1)) { // 如果index在整个链表的前半部分，从前往后找 (size >> 1 = size / 2)
             Node<E> x = first;
             for (int i = 0; i < index; i++) {
                 x = x.next;
@@ -187,6 +195,10 @@ public class LinkedList<E> {
         }
     }
 
+    /**
+     * 判断是否index是否越界
+     * @param index
+     */
     private void checkPositionIndex(int index) {
         if (!(isPositionIndex(index))) {
             throw new IndexOutOfBoundsException(outOfBoundsMsg(index));
@@ -214,11 +226,21 @@ public class LinkedList<E> {
         return node(index).item;
     }
 
+    /**
+     * 删除指定位置
+     * @param index
+     * @return
+     */
     public E remove(int index) {
         checkElementIndex(index);
         return unlink(node(index));
     }
 
+    /**
+     * 删除指定位置的元素
+     * @param x
+     * @return
+     */
     private E unlink(Node<E> x) {
         E item = x.item;
         Node<E> prev = x.prev;
@@ -246,8 +268,8 @@ public class LinkedList<E> {
      */
     protected static class Node<E> {
         E item; // 数据域
-        Node<E> next;
-        Node<E> prev;
+        Node<E> next; // 后继
+        Node<E> prev; // 前驱
 
         Node(Node<E> prev, E element, Node<E> next) {
             this.item = element;

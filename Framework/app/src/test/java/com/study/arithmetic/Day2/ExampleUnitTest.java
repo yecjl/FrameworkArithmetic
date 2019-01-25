@@ -1,10 +1,12 @@
-package com.study.arithmetic.majiang;
+package com.study.arithmetic.Day2;
 
 import org.junit.Test;
 
-import static com.study.arithmetic.majiang.Mahjong.SUIT_TIAO;
-import static com.study.arithmetic.majiang.Mahjong.SUIT_TONG;
-import static com.study.arithmetic.majiang.Mahjong.SUIT_WANG;
+import java.util.Map;
+
+import static com.study.arithmetic.Day2.Mahjong.SUIT_TIAO;
+import static com.study.arithmetic.Day2.Mahjong.SUIT_TONG;
+import static com.study.arithmetic.Day2.Mahjong.SUIT_WANG;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -13,8 +15,8 @@ import static org.junit.Assert.assertEquals;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
-    private int ORDER_BY_SUIT = 0;
-    private int ORDER_BY_RANK = 1;
+    private int ORDER_BY_SUIT = 0;  // 按照花色排序
+    private int ORDER_BY_RANK = 1;  // 按照点数排序
 
     @Test
     public void addition_isCorrect() {
@@ -61,7 +63,7 @@ public class ExampleUnitTest {
     }
 
     /**
-     * 按组分类
+     * 根据对应的orderBy进行分类合并
      *
      * @param list
      * @param orderBy
@@ -73,13 +75,14 @@ public class ExampleUnitTest {
             numList[i] = new LinkedList<>();
         }
         while (!list.isEmpty()) {
-            Mahjong remove = list.remove();
-            int index = remove.rank - 1;
-            if (orderBy == ORDER_BY_SUIT) {
+            Mahjong remove = list.remove(); // 将麻将取出
+            int index = remove.rank - 1; // 下标为点数-1
+            if (orderBy == ORDER_BY_SUIT) { // 下标为花色-1
                 index = remove.suit - 1;
             }
-            numList[index].add(remove);
+            numList[index].add(remove); // 放到对应链表中
         }
+        // 将链表组拼在一起
         for (int i = 0; i < numList.length; i++) {
             list.addAll(numList[i]);
         }

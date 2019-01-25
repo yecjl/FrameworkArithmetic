@@ -1,7 +1,5 @@
-package com.study.arithmetic.majiang;
+package com.study.arithmetic.Day2;
 
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * 功能：麻将类

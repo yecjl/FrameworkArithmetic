@@ -1,4 +1,4 @@
-package com.study.arithmetic.tree;
+package com.study.arithmetic.Day4;
 
 /**
  * 功能：

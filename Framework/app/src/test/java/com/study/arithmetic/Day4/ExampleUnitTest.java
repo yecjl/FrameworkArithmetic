@@ -1,6 +1,4 @@
-package com.study.arithmetic.tree;
-
-import com.study.arithmetic.R;
+package com.study.arithmetic.Day4;
 
 import org.junit.Test;
 
