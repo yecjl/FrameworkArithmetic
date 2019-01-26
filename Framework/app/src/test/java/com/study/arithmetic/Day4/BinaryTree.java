@@ -1,18 +1,23 @@
 package com.study.arithmetic.Day4;
 
 /**
- * 功能：
+ * 功能：二叉树
  * <p>
  * Created by danke on 2018/12/3.
  */
-public class BinarayTree<E> {
-    transient Node<E> root;
+public class BinaryTree<E> {
+    transient Node<E> root; // 树的根结点
 
-    public BinarayTree(E e) {
+    public BinaryTree(E e) {
         this.root = new Node<>(e, null, null);
     }
 
-    public void creatTree(Node<String> root) {
+    /**
+     * 创建二叉树
+     * @param root
+     */
+    public void createTree(Node<String> root) {
+        // 创建每个结点
         Node<String> bNode = new Node<>("B", null, null);
         Node<String> cNode = new Node<>("C", null, null);
         Node<String> dNode = new Node<>("D", null, null);
@@ -22,6 +27,7 @@ public class BinarayTree<E> {
         Node<String> hNode = new Node<>("H", null, null);
         Node<String> jNode = new Node<>("J", null, null);
         Node<String> iNode = new Node<>("I", null, null);
+        // 设置每个结点的左右孩子
         root.leftChild = bNode;
         root.rightChild = cNode;
         bNode.leftChild = dNode;
@@ -41,9 +47,9 @@ public class BinarayTree<E> {
         if (root == null) {
             return;
         }
-        midOrderTraverse(root.leftChild);
-        System.out.print(root.data);
-        midOrderTraverse(root.rightChild);
+        midOrderTraverse(root.leftChild); // 左
+        System.out.print(root.data); // 根
+        midOrderTraverse(root.rightChild); // 右
     }
 
     /**
@@ -54,9 +60,9 @@ public class BinarayTree<E> {
         if (root == null) {
             return;
         }
-        System.out.print(root.data);
-        preOrderTraverse(root.leftChild);
-        preOrderTraverse(root.rightChild);
+        System.out.print(root.data); // 根
+        preOrderTraverse(root.leftChild); // 左
+        preOrderTraverse(root.rightChild); // 右
     }
 
     /**
@@ -67,15 +73,15 @@ public class BinarayTree<E> {
         if (root == null) {
             return;
         }
-        postOrderTraverse(root.leftChild);
-        postOrderTraverse(root.rightChild);
-        System.out.print(root.data);
+        postOrderTraverse(root.leftChild); // 左
+        postOrderTraverse(root.rightChild); // 右
+        System.out.print(root.data); // 根
     }
 
     public class Node<E> {
         E data;
-        Node<E> leftChild;
-        Node<E> rightChild;
+        Node<E> leftChild; // 左孩子
+        Node<E> rightChild; // 右孩子
 
         public Node(E data, Node<E> leftChild, Node<E> rightChild) {
             this.data = data;

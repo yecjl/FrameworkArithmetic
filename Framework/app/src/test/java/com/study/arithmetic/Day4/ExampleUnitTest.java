@@ -17,8 +17,8 @@ public class ExampleUnitTest {
 
     @Test
     public void tesTraverse() {
-        BinarayTree<String> tree = new BinarayTree<>("A");
-        tree.creatTree(tree.root);
+        BinaryTree<String> tree = new BinaryTree<>("A");
+        tree.createTree(tree.root);
         // DLR
 //        tree.preOrderTraverse(tree.root);
 //        // LDR
