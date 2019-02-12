@@ -23,6 +23,7 @@ public class ExampleUnitTest {
         // 1、git commit --amend： 命令确实起作用，一定不要试图去修改线上的提交日志,否则会产生冲突！！！
         // 2、git rebase 线上修改
         // 2、git rebase 01
+        // 2、git rebase 02
     }
 
     public void printList(int[] list) {
