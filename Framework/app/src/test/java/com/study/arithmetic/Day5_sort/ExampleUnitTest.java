@@ -1,4 +1,4 @@
-package com.study.arithmetic.sore;
+package com.study.arithmetic.sort;
 
 import org.junit.Test;
 
@@ -17,14 +17,16 @@ public class ExampleUnitTest {
 
     @Test
     public void testSort() {
-        int[] list = new int[]{4, 7, 8, 10, 14, 21, 22, 36, 62, 77, 81, 91};
-        printList(list);
-        System.out.println("index = " + binarySearch(list, 0, list.length, 9));
+//        int[] list = new int[]{4, 7, 8, 10, 14, 21, 22, 36, 62, 77, 81, 91};
+//        printList(list);
+//        System.out.println("index = " + binarySearch(list, 0, list.length, 9));
 
 
-//        int[] list = new int[]{31, 68, 45, 90, 23, 39, 54, 68, 87, 76};
+        int[] list = new int[]{31, 68, 45, 90, 23, 39, 54, 68, 87, 76};
+//        int[] list = new int[]{2, 4, 8, 9, 3, 5, 7, 10};
         printList(list);
-        quickSort(list, 0, list.length - 1);
+//        quickSort(list, 0, list.length - 1);
+        mergeSort(list, 0, list.length - 1);
         printList(list);
     }
 
@@ -49,7 +51,8 @@ public class ExampleUnitTest {
     }
 
     /**
-     * 快速排序: Arrays.sort(list); 缺点：只能排顺序表，不能排链表
+     * 快速排序: Arrays.sort(list); 缺点：只能排顺序表，不能排链表 -- 前序
+     *
      * @param array
      * @param begin
      * @param end
@@ -101,8 +104,58 @@ public class ExampleUnitTest {
         quickSort(array, low + 1, end);
     }
 
-    public void mergeSort(int[] array, int left, int middle, int right) {
+    // 2 4 8 9    3 5 7 10
+    public void merge(int[] array, int left, int middle, int right) {
+        int leftSize = middle - left;
+        int rightSize = right - middle + 1;
+        int[] leftArray = new int[leftSize];
+        int[] rightArray = new int[rightSize];
+        for (int i = 0; i < leftSize; i++) {
+            leftArray[i] = array[left + i];
+        }
+        for (int i = 0; i < rightSize; i++) {
+            rightArray[i] = array[middle + i];
+        }
+        int indexLeft = 0, indexRight = 0, key = left;
+        while (indexLeft < leftSize && indexRight < rightSize) {
+            if (leftArray[indexLeft] < rightArray[indexRight]) {
+                array[key] = leftArray[indexLeft++];
+                key++;
+            } else {
+                array[key] = rightArray[indexRight++];
+                key++;
+            }
+        }
+        // 右边剩下的全部拷贝到排序数组中
+        if (indexLeft >= leftSize) {
+            for (int i = indexRight; i < rightSize; i++) {
+                array[key] = rightArray[i];
+                key++;
+            }
+        }
+        // 左边剩下的全部拷贝到排序数组中
+        if (indexRight >= rightSize) {
+            for (int i = indexLeft; i < leftSize; i++) {
+                array[key] = leftArray[i];
+                key++;
+            }
+        }
+    }
 
+    /**
+     * 归并排序 -- 后序
+     * @param array
+     * @param left
+     * @param right
+     */
+    public void mergeSort(int[] array, int left, int right) {
+        if (left == right) {
+            return;
+        }
+        int middle = (left + right) >> 1;
+        mergeSort(array, left, middle);
+        mergeSort(array, middle + 1, right);
+        merge(array, left, middle + 1, right);
     }
 
     public void printList(int[] list) {

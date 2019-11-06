@@ -90,7 +90,7 @@ public class ExampleUnitTest {
     }
 
     /**
-     * 汉诺塔算法
+     * 汉诺塔算法 -- 中序
      *
      * @param n      总共n个盘子
      * @param start  开始柱子

@@ -17,12 +17,39 @@ public class ExampleUnitTest {
 
     @Test
     public void testSort() {
-        int[] list = new int[]{31, 68, 45, 90, 23, 39, 54, 68, 87, 76};
-        SearchBinaryTree<Integer> tree = new SearchBinaryTree<>();
+        int[] list = new int[]{31, 68, 45, 90, 23, 39, 54, 87, 76, 80, 81, 82, 100, 40, 41};
+        SearchBinaryTree tree = new SearchBinaryTree();
         for (int i : list) {
             tree.put(i);
         }
-        tree.searchLeftMidRight(tree.root);
+        tree.midOrderTraverse(tree.root);
+        System.out.println("\n---------");
+        for (int i = 0; i < list.length; i++) {
+            System.out.println("delete data = " + list[i]);
+            SearchBinaryTree.TreeNode treeNode = tree.searchNode(list[i]);
+            if (treeNode == null) {
+                System.out.println("don't find this data");
+            } else {
+                System.out.println("find this data: " + treeNode.data);
+            }
+
+            tree.deleteNode(treeNode);
+            tree.midOrderTraverse(tree.root);
+            System.out.println("\n---------");
+        }
+
+//        System.out.println("delete data = " + 81);
+//        SearchBinaryTree.TreeNode treeNode = tree.searchNode(81);
+//        if (treeNode == null) {
+//            System.out.println("don't find this data");
+//        } else {
+//            System.out.println("find this data: " + treeNode.data);
+//        }
+//
+//        tree.deleteNode(treeNode);
+//        tree.midOrderTraverse(tree.root);
+//        System.out.println("\n---------");
+
     }
 
     public void printList(int[] list) {
