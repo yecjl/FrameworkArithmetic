@@ -1,4 +1,4 @@
-package com.study.arithmetic.binarytree;
+package com.study.arithmetic.Day6_binarytree;
 
 import org.junit.Test;
 
