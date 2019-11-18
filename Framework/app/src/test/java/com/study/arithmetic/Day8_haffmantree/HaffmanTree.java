@@ -5,6 +5,10 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Stack;
 
+/**
+ * 哈弗曼树
+ * @param <T>
+ */
 public class HaffmanTree<T> {
     TreeNode<T> root;
 

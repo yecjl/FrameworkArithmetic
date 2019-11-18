@@ -3,7 +3,7 @@ package com.study.arithmetic.Day6_binarytree;
 import java.util.NoSuchElementException;
 
 /**
- * 功能：
+ * 功能：二叉排序树
  * <p>
  * Created by danke on 2018/12/7.
  */
@@ -168,22 +168,6 @@ public class SearchBinaryTree {
                 }
 
                 if (parentNode == null) {
-//                    // 1、minChild.parent.leftChild = null
-//                    minLeftChild.parent.leftChild = null;
-//                    // 1、root = minChild
-//                    this.root = minLeftChild;
-//                    // 1、minChild.parent = null
-//                    minLeftChild.parent = null;
-//                    // 1、minChild.left --> leftChild 2、leftChild.parent --> minChild
-//                    minLeftChild.leftChild = treeNode.leftChild;
-//                    treeNode.leftChild.parent = minLeftChild;
-//                    // 1、maxChild.right --> rightChild 2、rightChild.parent --> maxChild
-//                    maxRightChild.rightChild = treeNode.rightChild;
-//                    treeNode.rightChild.parent = maxRightChild;
-//                    // 1、node 断掉 right、left
-//                    treeNode.leftChild = null;
-//                    treeNode.rightChild = null;
-
                     // 1、minChild.left --> leftChild 2、leftChild.parent --> minChild
                     minLeftChild.leftChild = treeNode.leftChild;
                     treeNode.leftChild.parent = minLeftChild;
@@ -205,22 +189,6 @@ public class SearchBinaryTree {
                     treeNode.rightChild = null;
 
                 } else {
-//                    // 1、minChild.parent.leftChild = null
-//                    minLeftChild.parent.leftChild = null;
-//                    // 1、parentNode.rightChild --> minChild 2、minChild.parent --> parentNode
-//                    parentNode.rightChild = minLeftChild;
-//                    minLeftChild.parent = parentNode;
-//                    // 1、minChild.left --> leftChild 2、leftChild.parent --> minChild
-//                    minLeftChild.leftChild = treeNode.leftChild;
-//                    treeNode.leftChild.parent = minLeftChild;
-//                    // 1、maxChild.right --> rightChild 2、rightChild.parent --> maxChild
-//                    maxRightChild.rightChild = treeNode.rightChild;
-//                    treeNode.rightChild.parent = maxRightChild;
-//                    // 1、node 断掉 right、left、parent
-//                    treeNode.parent = null;
-//                    treeNode.leftChild = null;
-//                    treeNode.rightChild = null;
-
                     // 1、minChild.left --> leftChild 2、leftChild.parent --> minChild
                     minLeftChild.leftChild = treeNode.leftChild;
                     treeNode.leftChild.parent = minLeftChild;
