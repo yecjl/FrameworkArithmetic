@@ -1,7 +1,4 @@
-package com.study.arithmetic.Day8_AVLBtree;
-
-import com.study.arithmetic.Day6_binarytree.SearchBinaryTree;
-import com.study.arithmetic.Day8_haffmantree.HaffmanTree;
+package com.study.arithmetic.Day9_AVLBtree;
 
 import org.junit.Test;
 
