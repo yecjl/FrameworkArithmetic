@@ -1,13 +1,7 @@
-package com.study.arithmetic.Day3;
-
-import com.study.arithmetic.Day2.LinkedList;
-import com.study.arithmetic.Day2.Mahjong;
+package com.study.arithmetic.Day3_递归;
 
 import org.junit.Test;
 
-import static com.study.arithmetic.Day2.Mahjong.SUIT_TIAO;
-import static com.study.arithmetic.Day2.Mahjong.SUIT_TONG;
-import static com.study.arithmetic.Day2.Mahjong.SUIT_WANG;
 import static org.junit.Assert.assertEquals;
 
 /**

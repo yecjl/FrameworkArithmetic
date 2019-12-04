@@ -1,4 +1,4 @@
-package com.study.arithmetic.Day4;
+package com.study.arithmetic.Day4_二叉树;
 
 import org.junit.Test;
 

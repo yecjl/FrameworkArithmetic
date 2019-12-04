@@ -1,4 +1,4 @@
-package com.study.arithmetic.Day10_RedBlackTree;
+package com.study.arithmetic.Day10_红黑树;
 
 import java.util.Comparator;
 import java.util.Map;

@@ -1,6 +1,4 @@
-package com.study.arithmetic.Day10_RedBlackTree;
-
-import com.study.arithmetic.Day9_AVLBtree.AVLBTree;
+package com.study.arithmetic.Day10_红黑树;
 
 import org.junit.Test;
 

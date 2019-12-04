@@ -1,4 +1,4 @@
-package com.study.arithmetic.Day8_haffmantree;
+package com.study.arithmetic.Day8_哈夫曼树;
 
 import org.junit.Test;
 

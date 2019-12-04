@@ -1,4 +1,4 @@
-package com.study.arithmetic.Day6_binarytree;
+package com.study.arithmetic.Day6_二叉搜索树;
 
 import org.junit.Test;
 
