@@ -99,8 +99,8 @@ public class ExampleUnitTest {
                 System.out.print(x.item + " ");
             }
         }
-//        for (int i = 0; i < list.size(); i++) {
-//            System.out.print(list.get(i) + " ");
+//        for (int i = 0; i < array.size(); i++) {
+//            System.out.print(array.get(i) + " ");
 //        }
     }
 }

@@ -19,9 +19,9 @@ public class ListOptionTest {
     public void testSearch() {
         int[] list = new int[]{2, 1, 5, 4, 3, 9, 6};
         printList(list);
-//        int search = search(list, 3);
+//        int search = search(array, 3);
 //        System.out.println("search = " + search);
-//        modify(list, 2, 8);
+//        modify(array, 2, 8);
         delete(list, 2);
         printList(list);
 

@@ -17,15 +17,15 @@ public class ExampleUnitTest {
 
     @Test
     public void testSort() {
-//        int[] list = new int[]{4, 7, 8, 10, 14, 21, 22, 36, 62, 77, 81, 91};
-//        printList(list);
-//        System.out.println("index = " + binarySearch(list, 0, list.length, 9));
+//        int[] array = new int[]{4, 7, 8, 10, 14, 21, 22, 36, 62, 77, 81, 91};
+//        printList(array);
+//        System.out.println("index = " + binarySearch(array, 0, array.length, 9));
 
 
         int[] list = new int[]{31, 68, 45, 90, 23, 39, 54, 68, 87, 76};
-//        int[] list = new int[]{2, 4, 8, 9, 3, 5, 7, 10};
+//        int[] array = new int[]{2, 4, 8, 9, 3, 5, 7, 10};
         printList(list);
-//        quickSort(list, 0, list.length - 1);
+//        quickSort(array, 0, array.length - 1);
         mergeSort(list, 0, list.length - 1);
         printList(list);
     }
@@ -51,7 +51,7 @@ public class ExampleUnitTest {
     }
 
     /**
-     * 快速排序: Arrays.sort(list); 缺点：只能排顺序表，不能排链表 -- 前序
+     * 快速排序: Arrays.sort(array); 缺点：只能排顺序表，不能排链表 -- 前序
      *
      * @param array
      * @param begin

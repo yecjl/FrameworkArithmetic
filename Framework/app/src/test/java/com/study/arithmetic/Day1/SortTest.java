@@ -23,8 +23,8 @@ public class SortTest {
         int[] list = new int[]{2, 1, 5, 4, 3, 9, 6};
         printList(list);
         selectSort(list);
-        //        bubbleSort(list);
-        //        Arrays.sort(list);
+        //        bubbleSort(array);
+        //        Arrays.sort(array);
         printList(list);
     }
 

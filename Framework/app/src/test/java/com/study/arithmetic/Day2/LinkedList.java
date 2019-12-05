@@ -19,7 +19,7 @@ public class LinkedList<E> {
     transient Node<E> last; // 后继
 
     /**
-     * Constructs an empty list.
+     * Constructs an empty array.
      */
     public LinkedList() {
     }
